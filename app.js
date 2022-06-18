@@ -30,10 +30,23 @@ const renderCountry = (country) => {
 
     const countriesDiv = document.querySelector('.countries');
     const {
-        capital
+        capital,
+        name: {
+            common
+        },
+        region,
+        flags: {
+            svg
+        },
+        languages,
+        currencies
     } = country;
-    console.log(capital);
+    console.log(capital, common, region, svg, Object.values(languages),
+        Object.values(currencies)[0].name, Object.values(currencies)[0].symbol);
+
+
 }
 
 country(`turkey`);
 country('germany');
+country('usa');
