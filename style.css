@@ -1,0 +1,8 @@
+@import url('http://fonts.cdnfonts.com/css/novela');
+
+body {
+    text-align: center;
+    font-size: 0.8rem;
+    height: 100vh;
+    font-family: 'Novela', sans-serif;
+}
