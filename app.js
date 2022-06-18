@@ -41,12 +41,34 @@ const renderCountry = (country) => {
         languages,
         currencies
     } = country;
-    console.log(capital, common, region, svg, Object.values(languages),
-        Object.values(currencies)[0].name, Object.values(currencies)[0].symbol);
+    // console.log(capital, common, region, svg,
+    //     Object.values(languages),
+    //     Object.values(currencies)[0].name,
+    //     Object.values(currencies)[0].symbol);
 
+
+    countriesDiv.innerHTML += `
+  <div class="card shadow-lg" style="width: 18rem;">
+    <img src="${svg}" class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 class="card-title">${common}</h5>
+    <p class="card-text">${region}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+        <i class="fas fa-lg fa-landmark"></i>&nbsp;&nbsp; ${capital}
+    </li>
+    <li class="list-group-item">
+        <i class="fas fa-lg fa-comments"></i>&nbsp;&nbsp; ${Object.values(languages)}
+    </li>
+    <li class="list-group-item">
+        <i class="fas fa-lg fa-money-bill-wave"></i>&nbsp;&nbsp; ${Object.values(currencies)[0].name}, ${Object.values(currencies)[0].symbol}
+    </li>
+  </ul>`;
 
 }
 
 country(`turkey`);
 country('germany');
 country('usa');
+country('canada');
