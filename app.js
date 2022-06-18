@@ -1,5 +1,5 @@
 const country = async (name) => {
-    const url = `https://restcountries.com/v3.1/name/${name}`
+    const url = `https://restcountries.com/v3.1/nme/${name}`
 
     try {
         const res = await fetch(url);
@@ -16,12 +16,13 @@ const country = async (name) => {
     } catch (error) {
 
     }
-
-
 }
 
-const renderError = () => {
+const renderError = (err) => {
+    const countriesDiv = document.querySelector('.countries');
 
+    countriesDiv.innerHTML = `<h1 class= "text-danger">${err}</h1>
+    <img src="http://egyptianstreets.com/wp-content/uploads/2017/07/404.jpg">`;
 }
 
 country(`turkey`);
