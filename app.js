@@ -1,5 +1,5 @@
 const country = async (name) => {
-    const url = `https://restcountries.com/v3.1/nme/${name}`
+    const url = `https://restcountries.com/v3.1/name/${name}`
 
     try {
         const res = await fetch(url);
@@ -10,11 +10,11 @@ const country = async (name) => {
         }
 
         const data = await res.json(res);
-
-        console.log(data[0]);
+        // console.log(data[0]);
+        renderCountry(data[0]);
 
     } catch (error) {
-
+        console.log(error);
     }
 }
 
@@ -23,6 +23,16 @@ const renderError = (err) => {
 
     countriesDiv.innerHTML = `<h1 class= "text-danger">${err}</h1>
     <img src="http://egyptianstreets.com/wp-content/uploads/2017/07/404.jpg">`;
+}
+
+const renderCountry = (country) => {
+    console.log(country);
+
+    const countriesDiv = document.querySelector('.countries');
+    const {
+        capital
+    } = country;
+    console.log(capital);
 }
 
 country(`turkey`);
